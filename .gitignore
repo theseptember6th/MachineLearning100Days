@@ -4,3 +4,4 @@
 **/*.pyo
 **/*.cache
 .venv/
+# or venv/
