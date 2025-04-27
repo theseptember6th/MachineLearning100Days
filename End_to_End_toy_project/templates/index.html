@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Performance Predictor</h1>
+        <form id="prediction-form">
+            <div class="input-group">
+                <label for="iq">IQ Score:</label>
+                <div class="control-group">
+                    <button type="button" class="btn-small" onclick="decrementValue('iq')">-</button>
+                    <input type="number" id="iq" name="iq" value="100" min="70" max="180" step="1" required>
+                    <button type="button" class="btn-small" onclick="incrementValue('iq')">+</button>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="cgpa">CGPA:</label>
+                <div class="control-group">
+                    <button type="button" class="btn-small" onclick="decrementValue('cgpa')">-</button>
+                    <input type="number" id="cgpa" name="cgpa" value="3.0" min="0" max="10" step="0.1" required>
+                    <button type="button" class="btn-small" onclick="incrementValue('cgpa')">+</button>
+                </div>
+            </div>
+            
+            <button type="submit">Predict</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
